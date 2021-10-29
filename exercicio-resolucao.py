@@ -45,3 +45,12 @@ for usuario in response:
 
 
 # 4 - Trocar  o nome do curso "A melhor linguagem do mundo" para "Python"
+
+# 5 - Transformar o valor de cursos para o seguinte dicionário:
+# 'cursos': {'Quantidade de cursos':
+#'Aluno Aplicado': True or False
+# 'Aluno da melhor professora': True or False
+# 'cursos do aluno': [lista dos cursos do aluno]}
+# O Aluno será aplicado se fizer mais de 2 cursos
+#O Aluno será aluno da melhor professora de estiver no curso de Python
+

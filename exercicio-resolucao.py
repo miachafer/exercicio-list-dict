@@ -76,19 +76,3 @@ for usuario in response:
     usuario['cursos'] = resultado
 
 print(response)
-
-# 'Aluno da melhor professora': True if curso == 'Python' for curso in usuario['cursos']
-# 'Aluno da melhor professora': if curso == 'Python' for curso in usuario['cursos']
-#
-
-# desconhecido = [x['nome completo'] for x in lista if (x['email'] or x['CEP'] or x['endereço']) == 'desconhecido']
-"""
-for usuario in response:
-    resultado = {
-        'Quantidade de cursos': len(usuario['cursos']),
-        'Aluno aplicado': len(usuario['cursos']) > 2,
-        'Aluno da melhor professora': curso == 'Python' for curso in usuario['cursos'],
-        'Cursos do aluno': usuario['cursos']
-    }
-    usuario['cursos'] = resultado
-"""

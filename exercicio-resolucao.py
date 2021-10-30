@@ -46,6 +46,15 @@ for usuario in response:
 
 # 4 - Trocar  o nome do curso "A melhor linguagem do mundo" para "Python"
 
+for usuario in response:
+    for curso in usuario['cursos']:
+        for indice, valor in enumerate(usuario['cursos']):
+            if valor == 'A melhor linguagem do mundo':
+                (usuario['cursos'])[indice] = 'Python'
+
+
+
+
 # 5 - Transformar o valor de cursos para o seguinte dicionário:
 # 'cursos': {'Quantidade de cursos':
 #'Aluno Aplicado': True or False
@@ -54,3 +63,21 @@ for usuario in response:
 # O Aluno será aplicado se fizer mais de 2 cursos
 #O Aluno será aluno da melhor professora de estiver no curso de Python
 
+cursos = {'Quantidade de cursos': None,
+          'Aluno aplicado': None,
+          'Aluno da melhor professora': None,
+          'Cursos do aluno': None,
+          }
+
+lista_de_cursos = [usuario['cursos'] for usuario in response]
+
+# inserindo o dict cursos no valor da chave 'cursos' nos usuarios em lista response
+for usuario in response:
+    usuario['cursos'] = cursos
+
+
+# inserindo a lista de cursos na chave 'Cursos do aluno' da chave 'cursos' nos usuarios em lista response
+for usuario in response:
+    for item in usuario['cursos']:
+        if item == 'Cursos do aluno':
+            usuario['cursos']['Cursos do aluno'] = lista_de_cursos

@@ -60,27 +60,19 @@ for usuario in response:
 
 # 5 - Transformar o valor de cursos para o seguinte dicionário:
 # 'cursos': {'Quantidade de cursos':
-#'Aluno Aplicado': True or False
+# 'Aluno Aplicado': True or False
 # 'Aluno da melhor professora': True or False
 # 'cursos do aluno': [lista dos cursos do aluno]}
 # O Aluno será aplicado se fizer mais de 2 cursos
-#O Aluno será aluno da melhor professora de estiver no curso de Python
+# O Aluno será aluno da melhor professora de estiver no curso de Python
 
-cursos = {'Quantidade de cursos': None,
-          'Aluno aplicado': None,
-          'Aluno da melhor professora': None,
-          'Cursos do aluno': None,
-          }
-
-lista_de_cursos = [usuario['cursos'] for usuario in response]
-
-# inserindo o dict cursos no valor da chave 'cursos' nos usuarios em lista response
 for usuario in response:
-    usuario['cursos'] = cursos
+    resultado = {
+        'Quantidade de cursos': len(usuario['cursos']),
+        'Aluno aplicado': len(usuario['cursos']) > 2,
+        'Aluno da melhor professora': usuario['cursos'] = 'Python',
+        'Cursos do aluno': usuario['cursos']
+    }
+    usuario['cursos'] = resultado
 
-
-# inserindo a lista de cursos na chave 'Cursos do aluno' da chave 'cursos' nos usuarios em lista response
-for usuario in response:
-    for item in usuario['cursos']:
-        if item == 'Cursos do aluno':
-            usuario['cursos']['Cursos do aluno'] = lista_de_cursos
+print(response)
